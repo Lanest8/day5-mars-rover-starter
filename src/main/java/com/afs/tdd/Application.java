@@ -8,6 +8,9 @@ public class Application {
             if (coordinates.direction.equals("N")) {
                 return new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
             }
+            if (coordinates.direction.equals("S")) {
+                return new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
+            }
         }
         return null;
     }
