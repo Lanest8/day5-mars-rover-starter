@@ -7,20 +7,7 @@ public class Application {
 
     public static Coordinates executiveCommand(Coordinates coordinates, String command) {
         if (command.equals(MOVE)) {
-            switch (coordinates.direction) {
-                case NORTH -> {
-                    return new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
-                }
-                case SOUTH -> {
-                    return new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
-                }
-                case WEST -> {
-                    return new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
-                }
-                case EAST -> {
-                    return new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
-                }
-            }
+            return executiveMoveCommand(coordinates);
         }
         if (command.equals(LEFT)) {
             switch (coordinates.direction) {
@@ -52,6 +39,24 @@ public class Application {
                 case EAST -> {
                     return new Coordinates(coordinates.x, coordinates.y, SOUTH);
                 }
+            }
+        }
+        return null;
+    }
+
+    private static Coordinates executiveMoveCommand(Coordinates coordinates) {
+        switch (coordinates.direction) {
+            case NORTH -> {
+                return new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
+            }
+            case SOUTH -> {
+                return new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
+            }
+            case WEST -> {
+                return new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
+            }
+            case EAST -> {
+                return new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
             }
         }
         return null;
