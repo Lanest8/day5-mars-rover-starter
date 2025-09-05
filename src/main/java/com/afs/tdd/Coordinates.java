@@ -3,11 +3,11 @@ package com.afs.tdd;
 import java.util.Objects;
 
 public class Coordinates {
-    double x;
-    double y;
+    int x;
+    int y;
     String direction;
 
-    public Coordinates(double x, double y, String direction) {
+    public Coordinates(int x, int y, String direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
