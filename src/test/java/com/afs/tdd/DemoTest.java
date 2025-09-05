@@ -14,7 +14,7 @@ class DemoTest {
                 new Coordinates(0, 0, "N"), command
         );
 
-        assertNull(coordinatesResult);
+        assertEquals(coordinatesResult, new Coordinates(0, 1, "N"));
     }
 
     @Test
