@@ -3,7 +3,7 @@ package com.afs.tdd;
 import static com.afs.tdd.Command.*;
 import static com.afs.tdd.Direction.*;
 
-public class Application {
+public class MarsRover {
 
     public static Coordinates executiveCommand(Coordinates coordinates, String command) {
         return switch (command) {
