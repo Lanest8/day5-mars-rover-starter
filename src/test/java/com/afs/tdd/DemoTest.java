@@ -29,7 +29,7 @@ class DemoTest {
     }
 
     @Test
-    public void should_return_coordinates_when_W() {
+    public void should_return_coordinates_when_command_M_direction_W() {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
