@@ -127,4 +127,15 @@ class DemoTest {
         assertEquals(new Coordinates(0, 0, "N"), coordinatesResult);
     }
 
+    @Test
+    public void should_return_coordinates_when_command_R_direction_E() {
+        String command = "R";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "E"), command
+        );
+
+        assertEquals(new Coordinates(0, 0, "S"), coordinatesResult);
+    }
+
 }
