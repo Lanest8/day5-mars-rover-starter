@@ -2,19 +2,21 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import static com.afs.tdd.Direction.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 class DemoTest {
+
     @Test
     public void should_return_coordinates_when_command_M_direction_N() {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "N"), command
+                new Coordinates(0, 0, NORTH), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, 1, "N"));
+        assertEquals(coordinatesResult, new Coordinates(0, 1, NORTH));
     }
 
     @Test
@@ -22,10 +24,10 @@ class DemoTest {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "S"), command
+                new Coordinates(0, 0, SOUTH), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, -1, "S"));
+        assertEquals(coordinatesResult, new Coordinates(0, -1, SOUTH));
     }
 
     @Test
@@ -33,10 +35,10 @@ class DemoTest {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "W"), command
+                new Coordinates(0, 0, WEST), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(-1, 0, "W"));
+        assertEquals(coordinatesResult, new Coordinates(-1, 0, WEST));
     }
 
     @Test
@@ -44,10 +46,10 @@ class DemoTest {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "E"), command
+                new Coordinates(0, 0, EAST), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(1, 0, "E"));
+        assertEquals(coordinatesResult, new Coordinates(1, 0, EAST));
     }
 
     @Test
@@ -55,10 +57,10 @@ class DemoTest {
         String command = "L";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "N"), command
+                new Coordinates(0, 0, NORTH), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, 0, "W"));
+        assertEquals(coordinatesResult, new Coordinates(0, 0, WEST));
     }
 
     @Test
@@ -66,10 +68,10 @@ class DemoTest {
         String command = "L";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "S"), command
+                new Coordinates(0, 0, SOUTH), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, 0, "E"));
+        assertEquals(coordinatesResult, new Coordinates(0, 0, EAST));
     }
 
     @Test
@@ -77,10 +79,10 @@ class DemoTest {
         String command = "L";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "W"), command
+                new Coordinates(0, 0, WEST), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, 0, "S"));
+        assertEquals(coordinatesResult, new Coordinates(0, 0, SOUTH));
     }
 
     @Test
@@ -88,10 +90,10 @@ class DemoTest {
         String command = "L";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "E"), command
+                new Coordinates(0, 0, EAST), command
         );
 
-        assertEquals(coordinatesResult, new Coordinates(0, 0, "N"));
+        assertEquals(coordinatesResult, new Coordinates(0, 0, NORTH));
     }
 
     @Test
@@ -99,10 +101,10 @@ class DemoTest {
         String command = "R";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "N"), command
+                new Coordinates(0, 0, NORTH), command
         );
 
-        assertEquals(new Coordinates(0, 0, "E"), coordinatesResult);
+        assertEquals(new Coordinates(0, 0, EAST), coordinatesResult);
     }
 
     @Test
@@ -110,10 +112,10 @@ class DemoTest {
         String command = "R";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "S"), command
+                new Coordinates(0, 0, SOUTH), command
         );
 
-        assertEquals(new Coordinates(0, 0, "W"), coordinatesResult);
+        assertEquals(new Coordinates(0, 0, WEST), coordinatesResult);
     }
 
     @Test
@@ -121,10 +123,10 @@ class DemoTest {
         String command = "R";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "W"), command
+                new Coordinates(0, 0, WEST), command
         );
 
-        assertEquals(new Coordinates(0, 0, "N"), coordinatesResult);
+        assertEquals(new Coordinates(0, 0, NORTH), coordinatesResult);
     }
 
     @Test
@@ -132,10 +134,10 @@ class DemoTest {
         String command = "R";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, "E"), command
+                new Coordinates(0, 0, EAST), command
         );
 
-        assertEquals(new Coordinates(0, 0, "S"), coordinatesResult);
+        assertEquals(new Coordinates(0, 0, SOUTH), coordinatesResult);
     }
 
 }
