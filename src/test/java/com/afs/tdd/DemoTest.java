@@ -12,9 +12,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_M_direction_N() {
         String command = MOVE;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, NORTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, NORTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 1, NORTH));
     }
@@ -23,9 +21,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_M_direction_S() {
         String command = MOVE;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, SOUTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, SOUTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, -1, SOUTH));
     }
@@ -34,9 +30,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_M_direction_W() {
         String command = MOVE;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, WEST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, WEST), command);
 
         assertEquals(coordinatesResult, new Coordinates(-1, 0, WEST));
     }
@@ -45,9 +39,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_M_direction_E() {
         String command = MOVE;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, EAST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, EAST), command);
 
         assertEquals(coordinatesResult, new Coordinates(1, 0, EAST));
     }
@@ -56,9 +48,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_L_direction_N() {
         String command = LEFT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, NORTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, NORTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 0, WEST));
     }
@@ -67,9 +57,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_L_direction_S() {
         String command = LEFT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, SOUTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, SOUTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 0, EAST));
     }
@@ -78,9 +66,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_L_direction_W() {
         String command = LEFT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, WEST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, WEST), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 0, SOUTH));
     }
@@ -89,9 +75,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_L_direction_E() {
         String command = LEFT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, EAST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, EAST), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 0, NORTH));
     }
@@ -100,9 +84,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_R_direction_N() {
         String command = RIGHT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, NORTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, NORTH), command);
 
         assertEquals(new Coordinates(0, 0, EAST), coordinatesResult);
     }
@@ -111,9 +93,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_R_direction_S() {
         String command = RIGHT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, SOUTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, SOUTH), command);
 
         assertEquals(new Coordinates(0, 0, WEST), coordinatesResult);
     }
@@ -122,9 +102,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_R_direction_W() {
         String command = RIGHT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, WEST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, WEST), command);
 
         assertEquals(new Coordinates(0, 0, NORTH), coordinatesResult);
     }
@@ -133,9 +111,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_R_direction_E() {
         String command = RIGHT;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, EAST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, EAST), command);
 
         assertEquals(new Coordinates(0, 0, SOUTH), coordinatesResult);
     }
@@ -144,9 +120,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_B_direction_N() {
         String command = MOVE_BACKWARD;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, NORTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, NORTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, -1, NORTH));
     }
@@ -155,9 +129,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_B_direction_S() {
         String command = MOVE_BACKWARD;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, SOUTH), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, SOUTH), command);
 
         assertEquals(coordinatesResult, new Coordinates(0, 1, SOUTH));
     }
@@ -166,9 +138,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_B_direction_W() {
         String command = MOVE_BACKWARD;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, WEST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, WEST), command);
 
         assertEquals(coordinatesResult, new Coordinates(1, 0, WEST));
     }
@@ -177,9 +147,7 @@ class DemoTest {
     public void should_return_coordinates_when_command_B_direction_E() {
         String command = MOVE_BACKWARD;
 
-        Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0, 0, EAST), command
-        );
+        Coordinates coordinatesResult = Application.executiveCommand(new Coordinates(0, 0, EAST), command);
 
         assertEquals(coordinatesResult, new Coordinates(-1, 0, EAST));
     }
