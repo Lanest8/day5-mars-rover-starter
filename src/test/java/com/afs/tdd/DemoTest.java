@@ -27,4 +27,15 @@ class DemoTest {
 
         assertEquals(coordinatesResult, new Coordinates(0, -1, "S"));
     }
+
+    @Test
+    public void should_return_coordinates_when_W() {
+        String command = "M";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "W"), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(-1, 0, "W"));
+    }
 }
