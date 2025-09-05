@@ -105,4 +105,15 @@ class DemoTest {
         assertEquals(new Coordinates(0, 0, "E"), coordinatesResult);
     }
 
+    @Test
+    public void should_return_coordinates_when_command_R_direction_S() {
+        String command = "R";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "S"), command
+        );
+
+        assertEquals(new Coordinates(0, 0, "W"), coordinatesResult);
+    }
+
 }
