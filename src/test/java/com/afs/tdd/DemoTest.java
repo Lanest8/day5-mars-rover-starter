@@ -162,4 +162,14 @@ class DemoTest {
         assertEquals(coordinatesResult, new Coordinates(0, 1, SOUTH));
     }
 
+    @Test
+    public void should_return_coordinates_when_command_B_direction_W() {
+        String command = MOVE_BACKWARD;
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, WEST), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(1, 0, WEST));
+    }
 }
