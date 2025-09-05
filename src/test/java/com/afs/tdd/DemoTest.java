@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class DemoTest {
     @Test
-    public void should_return_coordinates_when_N() {
+    public void should_return_coordinates_when_command_M_direction_N() {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
