@@ -13,19 +13,24 @@ public class Application {
             return executiveLeftCommand(coordinates);
         }
         if (command.equals(RIGHT)) {
-            switch (coordinates.direction) {
-                case NORTH -> {
-                    return new Coordinates(coordinates.x, coordinates.y, EAST);
-                }
-                case SOUTH -> {
-                    return new Coordinates(coordinates.x, coordinates.y, WEST);
-                }
-                case WEST -> {
-                    return new Coordinates(coordinates.x, coordinates.y, NORTH);
-                }
-                case EAST -> {
-                    return new Coordinates(coordinates.x, coordinates.y, SOUTH);
-                }
+            return executiveRightCommand(coordinates);
+        }
+        return null;
+    }
+
+    private static Coordinates executiveRightCommand(Coordinates coordinates) {
+        switch (coordinates.direction) {
+            case NORTH -> {
+                return new Coordinates(coordinates.x, coordinates.y, EAST);
+            }
+            case SOUTH -> {
+                return new Coordinates(coordinates.x, coordinates.y, WEST);
+            }
+            case WEST -> {
+                return new Coordinates(coordinates.x, coordinates.y, NORTH);
+            }
+            case EAST -> {
+                return new Coordinates(coordinates.x, coordinates.y, SOUTH);
             }
         }
         return null;
