@@ -18,6 +18,11 @@ public class Application {
                 return new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
             }
         }
+        if (command.equals("L")) {
+            if (coordinates.direction.equals("N")) {
+                return new Coordinates(coordinates.x, coordinates.y, "W");
+            }
+        }
         return null;
     }
 }

@@ -49,4 +49,16 @@ class DemoTest {
 
         assertEquals(coordinatesResult, new Coordinates(1, 0, "E"));
     }
+
+    @Test
+    public void should_return_coordinates_when_command_L_direction_N() {
+        String command = "L";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "N"), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(0, 0, "W"));
+    }
+
 }
