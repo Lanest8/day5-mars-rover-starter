@@ -94,4 +94,15 @@ class DemoTest {
         assertEquals(coordinatesResult, new Coordinates(0, 0, "N"));
     }
 
+    @Test
+    public void should_return_coordinates_when_command_R_direction_N() {
+        String command = "R";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "N"), command
+        );
+
+        assertEquals(new Coordinates(0, 0, "E"), coordinatesResult);
+    }
+
 }

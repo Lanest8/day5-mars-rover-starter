@@ -32,6 +32,11 @@ public class Application {
                 return new Coordinates(coordinates.x, coordinates.y, "N");
             }
         }
+        if (command.equals("R")) {
+            if (coordinates.direction.equals("N")) {
+                return new Coordinates(coordinates.x, coordinates.y, "E");
+            }
+        }
         return null;
     }
 }
