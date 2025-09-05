@@ -40,7 +40,7 @@ class DemoTest {
     }
 
     @Test
-    public void should_return_coordinates_when_E() {
+    public void should_return_coordinates_when_command_M_direction_E() {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
