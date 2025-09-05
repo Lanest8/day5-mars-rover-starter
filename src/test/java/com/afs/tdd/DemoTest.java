@@ -2,15 +2,15 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import static com.afs.tdd.Command.*;
 import static com.afs.tdd.Direction.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_M_direction_N() {
-        String command = "M";
+        String command = MOVE;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, NORTH), command
@@ -21,7 +21,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_M_direction_S() {
-        String command = "M";
+        String command = MOVE;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, SOUTH), command
@@ -32,7 +32,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_M_direction_W() {
-        String command = "M";
+        String command = MOVE;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, WEST), command
@@ -43,7 +43,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_M_direction_E() {
-        String command = "M";
+        String command = MOVE;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, EAST), command
@@ -54,7 +54,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_L_direction_N() {
-        String command = "L";
+        String command = LEFT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, NORTH), command
@@ -65,7 +65,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_L_direction_S() {
-        String command = "L";
+        String command = LEFT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, SOUTH), command
@@ -76,7 +76,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_L_direction_W() {
-        String command = "L";
+        String command = LEFT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, WEST), command
@@ -87,7 +87,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_L_direction_E() {
-        String command = "L";
+        String command = LEFT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, EAST), command
@@ -98,7 +98,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_R_direction_N() {
-        String command = "R";
+        String command = RIGHT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, NORTH), command
@@ -109,7 +109,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_R_direction_S() {
-        String command = "R";
+        String command = RIGHT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, SOUTH), command
@@ -120,7 +120,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_R_direction_W() {
-        String command = "R";
+        String command = RIGHT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, WEST), command
@@ -131,7 +131,7 @@ class DemoTest {
 
     @Test
     public void should_return_coordinates_when_command_R_direction_E() {
-        String command = "R";
+        String command = RIGHT;
 
         Coordinates coordinatesResult = Application.executiveCommand(
                 new Coordinates(0, 0, EAST), command

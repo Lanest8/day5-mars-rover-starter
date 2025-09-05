@@ -1,9 +1,11 @@
 package com.afs.tdd;
 
+import static com.afs.tdd.Command.*;
+
 public class Application {
 
     public static Coordinates executiveCommand(Coordinates coordinates, String command) {
-        if (command.equals("M")) {
+        if (command.equals(MOVE)) {
             if (coordinates.direction.equals(Direction.NORTH)) {
                 return new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
             }
@@ -17,7 +19,7 @@ public class Application {
                 return new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
             }
         }
-        if (command.equals("L")) {
+        if (command.equals(LEFT)) {
             if (coordinates.direction.equals(Direction.NORTH)) {
                 return new Coordinates(coordinates.x, coordinates.y, Direction.WEST);
             }
@@ -31,7 +33,7 @@ public class Application {
                 return new Coordinates(coordinates.x, coordinates.y, Direction.NORTH);
             }
         }
-        if (command.equals("R")) {
+        if (command.equals(RIGHT)) {
             if (coordinates.direction.equals(Direction.NORTH)) {
                 return new Coordinates(coordinates.x, coordinates.y, Direction.EAST);
             }
