@@ -1,4 +1,4 @@
-package com.afs.tdd;
+package com.afs.tdd.constant;
 
 public class Direction {
     public static final String NORTH = "N";

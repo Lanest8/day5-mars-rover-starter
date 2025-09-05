@@ -1,7 +1,7 @@
 package com.afs.tdd;
 
-import static com.afs.tdd.Command.*;
-import static com.afs.tdd.Direction.*;
+import static com.afs.tdd.constant.Command.*;
+import static com.afs.tdd.constant.Direction.*;
 
 public class MarsRover {
 

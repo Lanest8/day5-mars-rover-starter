@@ -1,4 +1,4 @@
-package com.afs.tdd;
+package com.afs.tdd.constant;
 
 public class Command {
     public static final String MOVE = "M";

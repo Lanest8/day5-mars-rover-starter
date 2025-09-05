@@ -2,8 +2,8 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
-import static com.afs.tdd.Command.*;
-import static com.afs.tdd.Direction.*;
+import static com.afs.tdd.constant.Command.*;
+import static com.afs.tdd.constant.Direction.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
