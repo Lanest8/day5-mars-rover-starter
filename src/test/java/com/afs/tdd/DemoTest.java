@@ -38,4 +38,15 @@ class DemoTest {
 
         assertEquals(coordinatesResult, new Coordinates(-1, 0, "W"));
     }
+
+    @Test
+    public void should_return_coordinates_when_E() {
+        String command = "M";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "E"), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(1, 0, "E"));
+    }
 }
