@@ -10,20 +10,7 @@ public class Application {
             return executiveMoveCommand(coordinates);
         }
         if (command.equals(LEFT)) {
-            switch (coordinates.direction) {
-                case NORTH -> {
-                    return new Coordinates(coordinates.x, coordinates.y, WEST);
-                }
-                case SOUTH -> {
-                    return new Coordinates(coordinates.x, coordinates.y, EAST);
-                }
-                case WEST -> {
-                    return new Coordinates(coordinates.x, coordinates.y, SOUTH);
-                }
-                case EAST -> {
-                    return new Coordinates(coordinates.x, coordinates.y, NORTH);
-                }
-            }
+            return executiveLeftCommand(coordinates);
         }
         if (command.equals(RIGHT)) {
             switch (coordinates.direction) {
@@ -39,6 +26,24 @@ public class Application {
                 case EAST -> {
                     return new Coordinates(coordinates.x, coordinates.y, SOUTH);
                 }
+            }
+        }
+        return null;
+    }
+
+    private static Coordinates executiveLeftCommand(Coordinates coordinates) {
+        switch (coordinates.direction) {
+            case NORTH -> {
+                return new Coordinates(coordinates.x, coordinates.y, WEST);
+            }
+            case SOUTH -> {
+                return new Coordinates(coordinates.x, coordinates.y, EAST);
+            }
+            case WEST -> {
+                return new Coordinates(coordinates.x, coordinates.y, SOUTH);
+            }
+            case EAST -> {
+                return new Coordinates(coordinates.x, coordinates.y, NORTH);
             }
         }
         return null;
