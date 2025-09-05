@@ -11,10 +11,20 @@ class DemoTest {
         String command = "M";
 
         Coordinates coordinatesResult = Application.executiveCommand(
-                new Coordinates(0,0,"N"), command
+                new Coordinates(0, 0, "N"), command
         );
 
         assertNull(coordinatesResult);
+    }
 
+    @Test
+    public void should_return_coordinates_when_S() {
+        String command = "M";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "S"), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(0, -1, "S"));
     }
 }
