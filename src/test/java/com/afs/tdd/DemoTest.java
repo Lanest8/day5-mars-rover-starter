@@ -140,4 +140,15 @@ class DemoTest {
         assertEquals(new Coordinates(0, 0, SOUTH), coordinatesResult);
     }
 
+    @Test
+    public void should_return_coordinates_when_command_B_direction_N() {
+        String command = MOVE_BACKWARD;
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, NORTH), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(0, -1, NORTH));
+    }
+
 }

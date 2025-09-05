@@ -8,6 +8,7 @@ public class Application {
     public static Coordinates executiveCommand(Coordinates coordinates, String command) {
         return switch (command) {
             case MOVE -> executiveMoveCommand(coordinates);
+            case MOVE_BACKWARD -> executiveMoveBackwardCommand(coordinates);
             case LEFT -> executiveLeftCommand(coordinates);
             case RIGHT -> executiveRightCommand(coordinates);
             default -> null;
@@ -40,6 +41,16 @@ public class Application {
             case SOUTH -> new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
             case WEST -> new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
             case EAST -> new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
+            default -> null;
+        };
+    }
+
+    private static Coordinates executiveMoveBackwardCommand(Coordinates coordinates) {
+        return switch (coordinates.direction) {
+            case NORTH -> new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
+            case SOUTH -> new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
+            case WEST -> new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
+            case EAST -> new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
             default -> null;
         };
     }
