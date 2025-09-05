@@ -39,6 +39,9 @@ public class Application {
             if (coordinates.direction.equals("S")) {
                 return new Coordinates(coordinates.x, coordinates.y, "W");
             }
+            if (coordinates.direction.equals("W")) {
+                return new Coordinates(coordinates.x, coordinates.y, "N");
+            }
         }
         return null;
     }
