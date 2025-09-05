@@ -83,4 +83,15 @@ class DemoTest {
         assertEquals(coordinatesResult, new Coordinates(0, 0, "S"));
     }
 
+    @Test
+    public void should_return_coordinates_when_command_L_direction_E() {
+        String command = "L";
+
+        Coordinates coordinatesResult = Application.executiveCommand(
+                new Coordinates(0, 0, "E"), command
+        );
+
+        assertEquals(coordinatesResult, new Coordinates(0, 0, "N"));
+    }
+
 }
