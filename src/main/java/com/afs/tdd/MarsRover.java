@@ -18,11 +18,12 @@ public class MarsRover {
     }
 
     public static Coordinates executiveCommand(Coordinates coordinates, List<String> commands) {
-        Coordinates current = coordinates;
-        for (String command : commands) {
-            current = executiveCommand(current, command);
-        }
-        return current;
+        return commands.stream()
+                .reduce(
+                        coordinates,
+                        MarsRover::executiveCommand,
+                        (pre, next) -> next
+                );
     }
 
     private static Coordinates executiveRightCommand(Coordinates coordinates) {
