@@ -174,4 +174,13 @@ class DemoTest {
         assertEquals(new Coordinates(0, -4, NORTH), result);
     }
 
+    @Test
+    public void should_return_coordinates_when_command_multiple_L_direction_N() {
+        List<String> commands = Arrays.asList(LEFT, LEFT, LEFT);
+
+        Coordinates result = MarsRover.executiveCommand(new Coordinates(0, 0, NORTH), commands);
+
+        assertEquals(new Coordinates(0, 0, EAST), result);
+    }
+
 }
