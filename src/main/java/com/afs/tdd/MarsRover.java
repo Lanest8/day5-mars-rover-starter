@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.List;
+
 import static com.afs.tdd.constant.Command.*;
 import static com.afs.tdd.constant.Direction.*;
 
@@ -13,6 +15,14 @@ public class MarsRover {
             case RIGHT -> executiveRightCommand(coordinates);
             default -> null;
         };
+    }
+
+    public static Coordinates executiveCommand(Coordinates coordinates, List<String> commands) {
+        Coordinates current = coordinates;
+        for (String command : commands) {
+            current = executiveCommand(current, command);
+        }
+        return current;
     }
 
     private static Coordinates executiveRightCommand(Coordinates coordinates) {

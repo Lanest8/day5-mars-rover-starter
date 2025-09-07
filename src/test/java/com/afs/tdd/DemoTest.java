@@ -2,6 +2,9 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static com.afs.tdd.constant.Command.*;
 import static com.afs.tdd.constant.Direction.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -150,6 +153,16 @@ class DemoTest {
         Coordinates coordinatesResult = MarsRover.executiveCommand(new Coordinates(0, 0, EAST), command);
 
         assertEquals(coordinatesResult, new Coordinates(-1, 0, EAST));
+    }
+
+
+    @Test
+    public void should_return_coordinates_when_command_multiple_M_direction_N() {
+        List<String> commands = Arrays.asList(MOVE, MOVE, MOVE, MOVE);
+
+        Coordinates result = MarsRover.executiveCommand(new Coordinates(0, 0, NORTH), commands);
+
+        assertEquals(new Coordinates(0, 4, NORTH), result);
     }
 
 }
