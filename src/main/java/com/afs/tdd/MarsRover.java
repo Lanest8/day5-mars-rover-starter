@@ -16,41 +16,42 @@ public class MarsRover {
     }
 
     private static Coordinates executiveRightCommand(Coordinates coordinates) {
-        return switch (coordinates.direction) {
-            case NORTH -> new Coordinates(coordinates.x, coordinates.y, EAST);
-            case SOUTH -> new Coordinates(coordinates.x, coordinates.y, WEST);
-            case WEST -> new Coordinates(coordinates.x, coordinates.y, NORTH);
-            case EAST -> new Coordinates(coordinates.x, coordinates.y, SOUTH);
+        return switch (coordinates.getDirection()) {
+            case NORTH -> new Coordinates(coordinates.getX(), coordinates.getY(), EAST);
+            case SOUTH -> new Coordinates(coordinates.getX(), coordinates.getY(), WEST);
+            case WEST -> new Coordinates(coordinates.getX(), coordinates.getY(), NORTH);
+            case EAST -> new Coordinates(coordinates.getX(), coordinates.getY(), SOUTH);
             default -> null;
         };
     }
 
     private static Coordinates executiveLeftCommand(Coordinates coordinates) {
-        return switch (coordinates.direction) {
-            case NORTH -> new Coordinates(coordinates.x, coordinates.y, WEST);
-            case SOUTH -> new Coordinates(coordinates.x, coordinates.y, EAST);
-            case WEST -> new Coordinates(coordinates.x, coordinates.y, SOUTH);
-            case EAST -> new Coordinates(coordinates.x, coordinates.y, NORTH);
+        return switch (coordinates.getDirection()) {
+            case NORTH -> new Coordinates(coordinates.getX(), coordinates.getY(), WEST);
+            case SOUTH -> new Coordinates(coordinates.getX(), coordinates.getY(), EAST);
+            case WEST -> new Coordinates(coordinates.getX(), coordinates.getY(), SOUTH);
+            case EAST -> new Coordinates(coordinates.getX(), coordinates.getY(), NORTH);
             default -> null;
         };
     }
 
     private static Coordinates executiveMoveCommand(Coordinates coordinates) {
-        return switch (coordinates.direction) {
-            case NORTH -> new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
-            case SOUTH -> new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
-            case WEST -> new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
-            case EAST -> new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
+        return switch (coordinates.getDirection()) {
+            case NORTH -> new Coordinates(coordinates.getX(), coordinates.getY() + 1, coordinates.getDirection());
+            case SOUTH -> new Coordinates(coordinates.getX(), coordinates.getY() - 1, coordinates.getDirection());
+            case WEST -> new Coordinates(coordinates.getX() - 1, coordinates.getY(), coordinates.getDirection());
+            case EAST -> new Coordinates(coordinates.getX() + 1, coordinates.getY(), coordinates.getDirection());
             default -> null;
         };
     }
 
+
     private static Coordinates executiveMoveBackwardCommand(Coordinates coordinates) {
-        return switch (coordinates.direction) {
-            case NORTH -> new Coordinates(coordinates.x, --coordinates.y, coordinates.direction);
-            case SOUTH -> new Coordinates(coordinates.x, ++coordinates.y, coordinates.direction);
-            case WEST -> new Coordinates(++coordinates.x, coordinates.y, coordinates.direction);
-            case EAST -> new Coordinates(--coordinates.x, coordinates.y, coordinates.direction);
+        return switch (coordinates.getDirection()) {
+            case NORTH -> new Coordinates(coordinates.getX(), coordinates.getY() - 1, coordinates.getDirection());
+            case SOUTH -> new Coordinates(coordinates.getX(), coordinates.getY() + 1, coordinates.getDirection());
+            case WEST -> new Coordinates(coordinates.getX() + 1, coordinates.getY(), coordinates.getDirection());
+            case EAST -> new Coordinates(coordinates.getX() - 1, coordinates.getY(), coordinates.getDirection());
             default -> null;
         };
     }
