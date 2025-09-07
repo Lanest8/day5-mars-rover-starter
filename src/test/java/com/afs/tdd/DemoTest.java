@@ -192,4 +192,13 @@ class DemoTest {
         assertEquals(new Coordinates(0, 0, WEST), result);
     }
 
+    @Test
+    public void should_return_coordinates_when_complex_command_direction_N() {
+        List<String> commands = Arrays.asList(RIGHT, MOVE, LEFT, MOVE_BACKWARD);
+
+        Coordinates result = MarsRover.executiveCommand(new Coordinates(0, 0, NORTH), commands);
+
+        assertEquals(new Coordinates(1, -1, NORTH), result);
+    }
+
 }
