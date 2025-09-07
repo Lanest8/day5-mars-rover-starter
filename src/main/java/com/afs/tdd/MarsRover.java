@@ -14,7 +14,7 @@ public class MarsRover {
             WEST, new int[]{-1, 0},
             EAST, new int[]{1, 0}
     );
-    ;
+
     private static final Map<String, String> LEFT_MAP = Map.of(
             NORTH, WEST,
             WEST, SOUTH,
